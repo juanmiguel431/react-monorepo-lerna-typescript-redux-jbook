@@ -2,7 +2,8 @@
 .add-cell {
     position: relative;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease-in 0.1s;
+    margin: 10px 0;
 }
 
 .add-cell:hover {
@@ -27,4 +28,8 @@
 
 .add-cell .add-buttons button {
     margin: 0 40px;
+}
+
+.force-visible.add-cell {
+    opacity: 1;
 }
