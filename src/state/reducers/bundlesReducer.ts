@@ -25,7 +25,7 @@ const reducer = produce((state: BundlesState, action: Action) => {
       state[action.payload.cellId] = {
         loading: false,
         code: action.payload.bundle.code,
-        err: action.payload.bundle.err,
+        err: action.payload.bundle.error,
       }
       break;
     default:
