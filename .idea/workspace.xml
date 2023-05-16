@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="042903bf-a56d-4d32-8d08-637eadccb9ec" name="Changes" comment="Idea files added.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jbook.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/code-cell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/code-cell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/reducers/bundlesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/bundlesReducer.ts" afterDir="false" />
-    </list>
+    <list default="true" id="042903bf-a56d-4d32-8d08-637eadccb9ec" name="Changes" comment="Using bundlesReducer.ts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683861550675</updated>
       <workItem from="1683861553304" duration="479000" />
-      <workItem from="1684201341598" duration="583000" />
+      <workItem from="1684201341598" duration="660000" />
     </task>
     <task id="LOCAL-00001" summary="Idea files added.">
       <created>1683861615293</created>
@@ -62,7 +53,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683861615293</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Idea files added.">
+      <created>1684205900068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684205900068</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Using bundlesReducer.ts">
+      <created>1684205970926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684205970926</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,6 +75,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Idea files added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea files added." />
+    <MESSAGE value="Using bundlesReducer.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using bundlesReducer.ts" />
   </component>
 </project>
