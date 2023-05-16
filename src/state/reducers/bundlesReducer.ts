@@ -6,8 +6,8 @@ interface BundlesState {
   [key: string]: {
     loading: boolean;
     code: string;
-    err: string;
-  }
+    error: string;
+  } | undefined
 }
 
 const initialState: BundlesState = {}
@@ -18,14 +18,14 @@ const reducer = produce((state: BundlesState, action: Action) => {
       state[action.payload.cellId] = {
         loading: true,
         code: '',
-        err: '',
+        error: '',
       }
       break;
     case ActionType.BUNDLE_COMPLETE:
       state[action.payload.cellId] = {
         loading: false,
         code: action.payload.bundle.code,
-        err: action.payload.bundle.error,
+        error: action.payload.bundle.error,
       }
       break;
     default:
