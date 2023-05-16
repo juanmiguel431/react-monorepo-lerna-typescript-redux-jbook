@@ -23,7 +23,7 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     return () => {
       clearTimeout(timer);
     }
-  }, [cell.id, cell.content]);
+  }, [cell.id, cell.content, createBundle]);
 
   return (
     <div className="code-cell">
