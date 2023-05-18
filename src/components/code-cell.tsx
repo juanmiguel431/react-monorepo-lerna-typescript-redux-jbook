@@ -15,7 +15,13 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 
   const bundle = useAppSelector(s => s.bundles[cell.id]);
 
+  const isBundle = !!bundle;
   useEffect(() => {
+    if (!isBundle) {
+      createBundle(cell.id, cell.content);
+      return;
+    }
+
     const timer = setTimeout(async () => {
       createBundle(cell.id, cell.content);
     }, 1000);
@@ -23,7 +29,8 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     return () => {
       clearTimeout(timer);
     }
-  }, [cell.id, cell.content, createBundle]);
+
+  }, [cell.id, cell.content, createBundle, isBundle]);
 
   return (
     <div className="code-cell">
