@@ -19,7 +19,13 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const cumulativeCode = useTypedSelector(s  => {
     const { data, order } = s.cells;
     const orderedCells = order.map(id =>  data[id] );
-    const cumulativeCode = [];
+    const cumulativeCode = [
+      `
+        const show = (value) => {
+          document.querySelector('#root').innerHTML = value;
+        }
+      `
+    ];
     for (let c of orderedCells) {
       if (c.type === 'code') {
         cumulativeCode.push(c.content);
