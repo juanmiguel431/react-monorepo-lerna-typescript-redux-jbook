@@ -16,22 +16,39 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 
   const bundle = useTypedSelector(s => s.bundles[cell.id]);
 
+  const cumulativeCode = useTypedSelector(s  => {
+    const { data, order } = s.cells;
+    const orderedCells = order.map(id =>  data[id] );
+    const cumulativeCode = [];
+    for (let c of orderedCells) {
+      if (c.type === 'code') {
+        cumulativeCode.push(c.content);
+      }
+      if (c.id === cell.id) {
+        break;
+      }
+    }
+    return cumulativeCode;
+  });
+
+  const cumulativeCodeAsString = cumulativeCode.join('\n');
+
   const isBundle = !!bundle;
   useEffect(() => {
     if (!isBundle) {
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCodeAsString);
       return;
     }
 
     const timer = setTimeout(async () => {
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCodeAsString);
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     }
 
-  }, [cell.id, cell.content, createBundle, isBundle]);
+  }, [cell.id, cell.content, createBundle, isBundle, cumulativeCodeAsString]);
 
   return (
     <div className="code-cell">
