@@ -1,10 +1,10 @@
 import React from 'react';
-import { useAppSelector } from '../hooks/use-app-selector';
+import { useTypedSelector } from '../hooks/use-typed-selector';
 import CellListItem from './cell-list-item';
 import AddCell from './add-cell';
 
 const CellList: React.FC = () => {
-  const cells = useAppSelector(({ cells: { order, data } }) => order.map((id) => data[id]));
+  const cells = useTypedSelector(({ cells: { order, data } }) => order.map((id) => data[id]));
 
   const renderedCells = cells.map(cell => (
     <React.Fragment key={cell.id}>

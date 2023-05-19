@@ -4,7 +4,7 @@ import Preview from './preview';
 import Resizable from './resizable';
 import { Cell } from '../state';
 import { useActions } from '../hooks/use-actions';
-import { useAppSelector } from '../hooks/use-app-selector';
+import { useTypedSelector } from '../hooks/use-typed-selector';
 import './code-cell.css';
 
 interface CodeCellProps {
@@ -14,7 +14,7 @@ interface CodeCellProps {
 export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
 
-  const bundle = useAppSelector(s => s.bundles[cell.id]);
+  const bundle = useTypedSelector(s => s.bundles[cell.id]);
 
   const isBundle = !!bundle;
   useEffect(() => {
