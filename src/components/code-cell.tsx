@@ -6,6 +6,7 @@ import { Cell } from '../state';
 import { useActions } from '../hooks/use-actions';
 import { useTypedSelector } from '../hooks/use-typed-selector';
 import './code-cell.css';
+import { useCumulativeCode } from '../hooks/use-cumulative-code';
 
 interface CodeCellProps {
   cell: Cell;
@@ -15,61 +16,24 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
 
   const bundle = useTypedSelector(s => s.bundles[cell.id]);
-
-  const cumulativeCode = useTypedSelector(s => {
-    const { data, order } = s.cells;
-    const orderedCells = order.map(id => data[id]);
-
-    const showFunc = `
-        import _React from 'react';
-        import _ReactDOM from 'react-dom';
-        const _root = document.querySelector('#root');
-        var show = (value) => {
-          if (typeof value === 'object') {
-            if (value.$$typeof && value.props) {
-              _ReactDOM.render(value, _root);
-            } else {
-              _root.innerHTML = JSON.stringify(value);
-            }
-          } else {
-            _root.innerHTML = value;
-          }
-        }
-      `;
-
-    const showFuncNoOp = 'var show = () => {}';
-
-    const cumulativeCode = [];
-    for (let c of orderedCells) {
-      if (c.type === 'code') {
-        cumulativeCode.push(c.id === cell.id ? showFunc : showFuncNoOp);
-        cumulativeCode.push(c.content);
-      }
-      if (c.id === cell.id) {
-        break;
-      }
-    }
-    return cumulativeCode;
-  });
-
-  const cumulativeCodeAsString = cumulativeCode.join('\n');
+  const cumulativeCode = useCumulativeCode(cell.id);
 
   const isBundle = !!bundle;
   useEffect(() => {
     if (!isBundle) {
-      createBundle(cell.id, cumulativeCodeAsString);
+      createBundle(cell.id, cumulativeCode);
       return;
     }
 
     const timer = setTimeout(async () => {
-      createBundle(cell.id, cumulativeCodeAsString);
+      createBundle(cell.id, cumulativeCode);
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     }
 
-  }, [cell.id, cell.content, createBundle, isBundle, cumulativeCodeAsString]);
+  }, [cell.id, cell.content, createBundle, isBundle, cumulativeCode]);
 
   return (
     <div className="code-cell">
