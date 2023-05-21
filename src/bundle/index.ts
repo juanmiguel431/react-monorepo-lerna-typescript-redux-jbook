@@ -28,7 +28,9 @@ export const bundle = async (rawCode: string): Promise<{ code: string, error: st
       define: {
         'process.env.NODE_ENV': '"production"',
         global: 'window',
-      }
+      },
+      jsxFactory: '_React.createElement',
+      jsxFragment: '_React.Fragment'
     });
 
     return {
