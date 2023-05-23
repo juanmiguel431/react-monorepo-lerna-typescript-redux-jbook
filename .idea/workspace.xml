@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="042903bf-a56d-4d32-8d08-637eadccb9ec" name="Changes" comment="useMemo in useActions hook">
+    <list default="true" id="042903bf-a56d-4d32-8d08-637eadccb9ec" name="Changes" comment="Using framer-motion to improve the UX when we add, move or delete cell.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,20 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\work\\udemy\\React_Typescript\\jbook-old\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/work/udemy/React_Typescript/jbook-old-lerna",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\work\\udemy\\React_Typescript\\jbook-old\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1683861550675</updated>
       <workItem from="1683861553304" duration="479000" />
-      <workItem from="1684201341598" duration="2222000" />
+      <workItem from="1684201341598" duration="8951000" />
+      <workItem from="1684693182169" duration="10338000" />
     </task>
     <task id="LOCAL-00001" summary="Idea files added.">
       <created>1683861615293</created>
@@ -83,17 +94,147 @@
       <option name="project" value="LOCAL" />
       <updated>1684207098628</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="workspace update.">
+      <created>1684373668312</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684373668312</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Prevent wait one second for the very first time.">
+      <created>1684375877391</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684375877391</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Show a progress bar if the app is bundling.">
+      <created>1684376694278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684376694278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fade-in the progress bar.">
+      <created>1684377506038</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684377506038</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Putting a white background in preview window no matter what.">
+      <created>1684378438265</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684378438265</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Use Typed Selector instead of App Selector.">
+      <created>1684459898129</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684459898129</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Cumulative code execution.">
+      <created>1684461352382</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684461352382</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Show function">
+      <created>1684461728372</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684461728372</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Show function - Handling objects">
+      <created>1684693497768</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684693497768</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Show function - Rendering react elements and avoiding naming collisions.">
+      <created>1684695208012</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684695208012</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Show function - Rendering react elements and avoiding naming collisions.">
+      <created>1684696002810</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684696002810</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Implementing show function - no operation.">
+      <created>1684698995232</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684698995232</updated>
+    </task>
+    <task id="LOCAL-00018" summary="useCumulativeCode hook added.">
+      <created>1684699508624</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684699508624</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixing Edge Snaps">
+      <created>1684700017617</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684700017617</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Using framer-motion to improve the UX when we add, move or delete cell.">
+      <created>1684700623037</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684700623037</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Idea files added." />
     <MESSAGE value="Using bundlesReducer.ts" />
     <MESSAGE value="Idea - workspace.xml updated" />
     <MESSAGE value="useMemo in useActions hook" />
-    <option name="LAST_COMMIT_MESSAGE" value="useMemo in useActions hook" />
+    <MESSAGE value="workspace update." />
+    <MESSAGE value="Prevent wait one second for the very first time." />
+    <MESSAGE value="Show a progress bar if the app is bundling." />
+    <MESSAGE value="Fade-in the progress bar." />
+    <MESSAGE value="Putting a white background in preview window no matter what." />
+    <MESSAGE value="Use Typed Selector instead of App Selector." />
+    <MESSAGE value="Cumulative code execution." />
+    <MESSAGE value="Show function" />
+    <MESSAGE value="Show function - Handling objects" />
+    <MESSAGE value="Show function - Rendering react elements and avoiding naming collisions." />
+    <MESSAGE value="Implementing show function - no operation." />
+    <MESSAGE value="useCumulativeCode hook added." />
+    <MESSAGE value="Fixing Edge Snaps" />
+    <MESSAGE value="Using framer-motion to improve the UX when we add, move or delete cell." />
+    <option name="LAST_COMMIT_MESSAGE" value="Using framer-motion to improve the UX when we add, move or delete cell." />
   </component>
 </project>
