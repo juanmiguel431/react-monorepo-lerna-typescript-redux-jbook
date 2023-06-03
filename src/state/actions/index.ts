@@ -58,6 +58,10 @@ export interface BundleCompleteAction {
   }
 }
 
+export interface InitializeBundler {
+  type: ActionType.INITIALIZE_BUNDLER,
+}
+
 export interface FetchCellsAction {
   type: ActionType.FETCH_CELLS,
 }
@@ -83,6 +87,7 @@ export type Action =
   | InsertCellBeforeAction
   | InsertCellAfterAction
   | UpdateCellAction
+  | InitializeBundler
   | BundleStartAction
   | BundleCompleteAction
   | FetchCellsAction

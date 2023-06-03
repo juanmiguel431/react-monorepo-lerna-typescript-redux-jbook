@@ -6,14 +6,23 @@ import './cell-list.css';
 import { useActions } from '../hooks/use-actions';
 
 const CellList: React.FC = () => {
+  const cells = useTypedSelector(({ cells: { order, data } }) => order.map((id) => data[id]));
 
-  const { fetchCells } = useActions();
+  const { fetchCells, saveCells, initializeBundler } = useActions();
+
+  useEffect(() => {
+    initializeBundler();
+  }, [initializeBundler]);
 
   useEffect(() => {
     fetchCells();
   }, [fetchCells]);
 
-  const cells = useTypedSelector(({ cells: { order, data } }) => order.map((id) => data[id]));
+  const cellsStringify = JSON.stringify(cells);
+
+  useEffect(() => {
+    saveCells();
+  }, [cellsStringify, saveCells]);
 
   const renderedCells = cells.map(cell => (
     <React.Fragment key={cell.id}>

@@ -15,7 +15,7 @@ interface CodeCellProps {
 export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
 
-  const bundle = useTypedSelector(s => s.bundles[cell.id]);
+  const bundle = useTypedSelector(s => s.bundles.bundles[cell.id]);
   const cumulativeCode = useCumulativeCode(cell.id);
 
   const isBundle = !!bundle;
@@ -25,7 +25,7 @@ export const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
       return;
     }
 
-    const timer = setTimeout(async () => {
+    const timer = setTimeout( () => {
       createBundle(cell.id, cumulativeCode);
     }, 1000);
 

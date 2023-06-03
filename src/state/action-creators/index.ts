@@ -10,7 +10,7 @@ import {
   UpdateCellAction,
 } from '../actions';
 import { Cell, CellTypes } from '../cell';
-import bundle from '../../bundle';
+import bundle, { initializeEsBuild } from '../../bundle';
 import axios from 'axios';
 import { RootState } from '../store';
 
@@ -58,6 +58,22 @@ export const insertCellAfter = (id: string | null, cellType: CellTypes): InsertC
   }
 };
 
+export const initializeBundler = () => {
+  return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
+    try {
+      const { bundles: { bundlerInitialized } } = getState();
+      if (!bundlerInitialized) {
+        await initializeEsBuild();
+        dispatch({ type: ActionType.INITIALIZE_BUNDLER });
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        console.log(err.message);
+      }
+    }
+  }
+}
+
 export const createBundle = (cellId: string, input: string) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
@@ -95,8 +111,8 @@ export const fetchCells = () => {
 }
 
 export const saveCells = () => {
-  return async (dispatch: Dispatch<Action>, getState: RootState) => {
-    const { cells: { data, order } } = getState;
+  return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
+    const { cells: { data, order } } = getState();
     const cells = order.map(id => data[id]);
 
     try {
